@@ -28,6 +28,8 @@ final class FloatComparator implements Comparator
     /**
      * @param float $first
      * @param float $second
+     *
+     * @psalm-mutation-free
      */
     public function compare($first, $second): int
     {
@@ -45,6 +47,8 @@ final class FloatComparator implements Comparator
     /**
      * @param float $first
      * @param float $second
+     *
+     * @psalm-mutation-free
      */
     public function __invoke($first, $second): int
     {

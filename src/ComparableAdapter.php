@@ -25,6 +25,8 @@ final class ComparableAdapter implements Comparable
     /**
      * @param T             $element
      * @param Comparator<T> $comparator
+     *
+     * @psalm-mutation-free
      */
     public function __construct($element, Comparator $comparator)
     {
@@ -34,6 +36,8 @@ final class ComparableAdapter implements Comparable
 
     /**
      * @param T $element
+     *
+     * @psalm-mutation-free
      */
     public function compareTo($element): int
     {

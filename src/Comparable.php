@@ -17,6 +17,8 @@ interface Comparable
 {
     /**
      * @param T $element
+     *
+     * @psalm-mutation-free
      */
     public function compareTo($element): int;
 }
