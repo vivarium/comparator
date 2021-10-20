@@ -34,7 +34,7 @@ class ComparableComparatorTest extends TestCase
         $comparable2 = $this->createMock(Comparable::class);
 
         $comparator = new ComparableComparator();
-        $comparator->compare($comparable1, $comparable2);
-        $comparator($comparable1, $comparable2);
+        static::assertSame(1, $comparator->compare($comparable1, $comparable2));
+        static::assertSame(1, $comparator($comparable1, $comparable2));
     }
 }

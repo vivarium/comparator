@@ -32,10 +32,11 @@ class ComparableAdapterTest extends TestCase
         $comparator = $this->createMock(Comparator::class);
         $comparator->expects(static::once())
                    ->method('compare')
-                   ->with(static::equalTo($first), static::equalTo($second));
+                   ->with(static::equalTo($first), static::equalTo($second))
+                   ->willReturn(1);
 
         $adapter = new ComparableAdapter($first, $comparator);
 
-        $adapter->compareTo($second);
+        static::assertSame(1, $adapter->compareTo($second));
     }
 }
